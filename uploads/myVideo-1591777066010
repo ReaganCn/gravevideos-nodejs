@@ -1,0 +1,333 @@
+/* Data Types
+undefined, null, boolean, string, symbol, number and object
+*/
+/*
+var a; //declare
+
+a = 7; //assign
+
+var b = 9 //Initializing variables when declaring
+
+let - cannot declare variable twice, scope - function
+var - scope - globally
+const - read-only
+"use strict"; - enable strict mode to catch common coding mistakes
+
+you can mutate declared with const using bracket notation
+     - s[0] = 2;
+Object.freeze(OBJECT_NAME) - prevent muations in objects
+
+
+
+
+
+
+
+
+
+*/
+remainder = 11%3 // can be used to identify odd/even numbers by dividing by 2
+
+/*
+//you cannot edit a section of a  string with index
+
+backslash \ : used for escaping quotes in a string
+
+
+var stri = "I am a  \"double quoted\" string";
+
+//or use single quotes/ backticks{``} for string
+var stri = 'I am a  "double quoted" string';
+
+//find the last letter in a string
+length - 1 : returns the index of the last letter in a string
+
+***Template Literals -  use backticks { ` } in a string
+- can be use to escape quotes
+- can be used for a multi-line string
+- you can put variables right into the string using ${variable}
+*/
+/* Arrays
+pop() - remove last element
+shift() - remove first element
+unshift() -  add element to the beginning of the array
+push() - add element to the end of the array
+
+
+***Destructuring assignment
+- assign values taken directly from an object to a variable
+    const [z,x,y] = [1, 2, 3, 4, 5, 6] // will assign the 
+        values 1,2,3 to variables z,x,y
+    [z,x, ,y] = [1, 2, 3, 4, 5, 6]
+        values 1,2,4 to variables z,x,y
+
+- you can use the Rest Operator with destructuring to reassign array elements
+    const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const [ , , ...arr] = source;
+        - will return array without the first two elements
+
+
+*/
+
+/* Functions
+
+if you do not use var keyword to declare a variable within a function,
+the variable will be global and reusable anywhere  
+
+They do not need to have 'return' -  but return will be undefined
+ Can store functions in variables
+
+JSON.stringify() - function used to make an array a readable string 
+
+return a < b - returns true/false
+you can return a function earlier
+
+
+***Arrow Functions
+var myFunction = function() {
+
+    //Anonymous Function
+}
+
+var myFunction = () => {
+    return value_returned;
+}
+
+var myFunction = () => value_returned();
+
+ whenever a function takes another function as an arguement that a good time for an arrow function
+
+***Rest Operator
+three dots(...)
+- allows you to create a  function that takes a variable number of arguments
+- you will have to put it in brackets e.g. arr2 = [arr1];
+    now arr2 will have the contents of arr1. you can modify arr1 but arr2 will remain the same
+
+
+***Spread Operator
+three dots(...)
+spreads/expand an already existing array
+
+
+***Destrucuring Operator
+- you can use to pass an object as a function's parameters
+myFunction function ({legs,name}){
+    //use curly braces for the objects' property in the function parameter
+}
+
+*/
+
+/* if statement
+equality operator: == //for comparison in if statements
+inequality operator: !=
+strict equality operator: === //does not convert type - puts into a count the data type
+strict inequality operator: !==
+
+&& - two conditions - both have to be true (logical And)
+|| - two conditions - only one has to be true (logical Or)
+
+order is important in if statements -  once the first statement is met,
+it does not even check the other statements
+
+**Tenary Operator**
+condition ? statement-if-true : statement-if-false;
+- can be nested
+condition ? statement-if-true : condition ? statement-if-false : statement-if-false-again
+*/
+
+/* Switch
+
+var answer ="";
+switch(value){
+    case 1:
+        answer = "alpha";
+        break;
+    case 2:
+        answer = "beta";
+        break;
+    default:
+        answer = "nothing";
+    }
+
+- omit break statement in the case that you want multiple statements to return
+the same result
+
+
+*/
+
+/* Objects
+- are similar to arrays but instead of using indexes to acces items,
+you use properties
+
+var ourDog = {
+    "name": " Camper is good",
+    "legs" : 4,
+    "friends" : "[everything"
+}
+ properties- anything before colon
+ values - things aafter colon
+
+ access properties with 
+ 
+ .(dot) notation
+ e.g. ourDog.legs
+
+ accessing with bracket notation[]
+ required when a property has a space in it.
+ e.g. ourDog["name"]
+
+ accessing with variables
+    bracket notation.
+    
+    body  = "legs";
+    ourDog[body]
+
+updating properties
+
+ourDog.name = " Happy Camper"
+
+adding properties
+. or[]
+ourDog.bark ="Bow wow";
+
+deleting properties
+
+delete ourDog.bark
+
+check for property: use .hasOwnProperty()
+
+e.g  ourDog.hasOwnProperty("bark")
+
+- you can have complex objects - multiple objects within an array
+    - they can be by chaining the bracket and dot notation
+- to access properties in nested objects: chain the dot or bracket notation
+
+ JSON.parse() - keep a copy of an object
+
+***Destructuring assignment
+- assign values taken directly from an object to a variable
+
+var voxel = {x: 3.6, y:7.4, z: 6.54};
+
+//old way
+var a = vocel.x;
+var b = vocel.y;
+var c = vocel.z;
+
+//destructuring method
+const { x : a, y : b, z : c } = voxel;
+
+        nested objects
+
+
+** Object Literals
+
+const createPerson = (name, age, gender) => {
+
+ return {
+    name: name,
+    age : age,
+    gender : gender
+}}
+
+ **could be
+const createPerson = (name, age, gender) => ({name, age, gender}) 
+
+ - functions within objects
+const person {
+    name: name,
+    age : function(newAge) {
+            return newAge;
+    },
+    gender : gender
+}}
+
+**could be
+const person {
+    name: name,
+    age(newAge) {
+            return newAge;
+    },
+    gender : gender
+}}
+
+person.age(3):
+console.log(person.age) //will output 3
+
+*/
+
+/* Classes
+-using class to instantiate an object
+
+-old way
+function SpaceShuttle = function(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+}
+var zeus =  new SpaceShuttle('Jupiter');
+
+**could be
+class SpaceShuttle { 
+    constructor (targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+
+- getters and setters
+
+class Thermostat { 
+    constructor (temp) {
+        this._temp = temp;          //underscore for temporary variable
+    }
+
+    get temperature{                //temperature is the property
+        return this._temp
+    }
+
+    set temperature (updatedTemperature) {
+        this._temp = updatedTemperature;
+    }
+}
+
+*/
+
+/*
+while loop - runs as long as a condition is true and stops when its not
+ - you can iterate odd/even numbers into an array by changing the increment value
+ - you can count backwards by for(i=10; i>0 ; i-=2)
+do while loop -  will run the code at least once before it checks for
+the condition
+
+*/
+
+/*
+Math.random -  generate random fractions - number between 0 and 1
+Math.floor - random whole numbers
+    Math.floor(Math.random()*20) - return numbers between 0 and 20
+    Math.floor(Math.random()* (ourMax - ourMin + 1) + ourMin);
+
+parseInt - takes a string and converts it to an integer, otherwise it will return Nan(Not a Number)
+Radix - specifies the base od a number in a string
+    base 2- binary
+    base 10- normal
+        e.g. parseInt(1001, 2)
+*/
+
+/* Import and Export functions
+
+export {myFunction}
+export myVariable
+import {myFunction} from "./file_directory"
+
+- import everything
+
+import * as myNewObject from "./file_directory"
+
+- export default
+
+export default myFallbackFunction
+
+- import default export
+
+import myFallbackFunction from "./file_directory"   //we dont use curly braces in import default
+
+*/
